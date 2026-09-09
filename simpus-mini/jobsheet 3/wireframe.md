@@ -13,4 +13,5 @@
    - Petugas akan dapat klik tombol "Detail" untuk melihat info pinjaman
 
 3. Petugas mencoba meminjamkan buku yang sama ke anggota yang sama 2 kali berurut urut
-        -  solusi yang akan muncul di sistem : akan menampilkan pesan error "Buku sudah dipinjam oleh anggota ini" lalu akan otomatis menolak transaksi.
+        -  solusi yang akan muncul di sistem : akan menampilkan pesan error
+        "Buku sudah dipinjam oleh anggota ini" lalu akan otomatis menolak transaksi.
