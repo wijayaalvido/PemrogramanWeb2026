@@ -37,10 +37,21 @@ header h1 {
 }
 
 header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.25rem;
-    flex-wrap: wrap;
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  transition: max-height 0.3s ease; 
+  overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    max-height: 0;
+  }
+  .nav-toggle:checked ~ nav ul {
+    max-height: 500px; 
+  }
 }
 
 header nav a {
@@ -50,7 +61,7 @@ header nav a {
 
 /* ===== Main Layout ===== */
 main {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1.5rem;
 }
@@ -174,4 +185,71 @@ footer {
     padding: 1.25rem;
     color: #7a8794;
     font-size: 0.9rem;
+}
+
+/* ==== Tabel Responsif ==== */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* ===== Hamburger Menu (checkbox hack) ===== */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ===== Responsive Breakpoints ===== */
+@media (min-width: 1400px) {
+    main section:nth-of-type(2) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Tablet ke bawah */
+@media (max-width: 900px) {
+    main section:nth-of-type(2) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (min-width: 480px) {
+    header {
+        position: relative;
+    }
+
+    .nav-toggle-label {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        margin-top: 1rem;
+    }
+
+    .nav-toggle:checked ~ nav {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    main section:nth-of-type(2) {
+        grid-template-columns: 1fr;
+    }
+
+    form input,
+    form select {
+        max-width: 100%;
+    }
 }
